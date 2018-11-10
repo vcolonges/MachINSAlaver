@@ -6,14 +6,20 @@
         android:icon="@drawable/ic_home_black_24dp"
         android:title="@string/title_home" />
 
-    <item
-        android:id="@+id/navigation_dashboard"
-        android:icon="@drawable/ic_dashboard_black_24dp"
-        android:title="@string/title_dashboard" />
 
     <item
-        android:id="@+id/navigation_notifications"
-        android:icon="@drawable/ic_notifications_black_24dp"
-        android:title="@string/title_notifications" />
+        android:id="@+id/navigation_recharger"
+        android:icon="@drawable/ic_euro_symbol_black_24dp"
+        android:title="@string/title_recharger" />
+
+    <item
+        android:id="@+id/navigation_residences"
+        android:icon="@drawable/ic_business_black_24dp"
+        android:title="@string/title_residences" />
+
+    <item
+        android:id="@+id/navigation_profil"
+        android:icon="@drawable/ic_perm_identity_black_24dp"
+        android:title="@string/title_profil" />
 
 </menu>
