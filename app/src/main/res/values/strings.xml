@@ -16,6 +16,14 @@
     <string name="prixVA">Prix pour les adhérents V.A. : 2.00€</string>
     <string name="prixNONVA">Prix pour les non adhérents  : 5.00€</string>
 
-    <!-- Strings pour le fragment Recharger -->
+    <!-- Strings pour le fragment Profil -->
     <string name="mon_compte"><u>Mon Compte</u></string>
+    <string name="nom">Nom :</string>
+    <string name="prenom">Prénom :</string>
+    <string name="naissance">Date de naissance :</string>
+    <string name="email">Adresse e-mail :</string>
+    <string name="telephone">Numéro de tél. :</string>
+    <string name="carteVA">Carte VA</string>
+    <string name="modes_de_paiement">Modes de paiement</string>
+    <string name="deconnexion">Déconnexion</string>
 </resources>
