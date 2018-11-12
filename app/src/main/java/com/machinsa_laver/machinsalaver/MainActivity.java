@@ -1,11 +1,18 @@
 package com.machinsa_laver.machinsalaver;
 
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.widget.TextView;
+
+import com.machinsa_laver.machinsalaver.fragments.HomeFragment;
+import com.machinsa_laver.machinsalaver.fragments.ProfilFragment;
+import com.machinsa_laver.machinsalaver.fragments.RechargerFragment;
+import com.machinsa_laver.machinsalaver.fragments.ResidencesFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -14,17 +21,25 @@ public class MainActivity extends AppCompatActivity {
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
+        FragmentManager fragmentManager = getSupportFragmentManager();
+
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-                    mTextMessage.setText(R.string.title_home);
+                    fragmentTransaction.replace(R.id.fragment_container,new HomeFragment()).commit();
                     return true;
-                case R.id.navigation_dashboard:
-                    mTextMessage.setText(R.string.title_dashboard);
+                case R.id.navigation_recharger:
+                    fragmentTransaction.replace(R.id.fragment_container,new RechargerFragment()).commit();
                     return true;
-                case R.id.navigation_notifications:
-                    mTextMessage.setText(R.string.title_notifications);
+                case R.id.navigation_residences:
+                    fragmentTransaction.replace(R.id.fragment_container,new ResidencesFragment()).commit();
+                    return true;
+                case R.id.navigation_profil:
+                    fragmentTransaction.replace(R.id.fragment_container,new ProfilFragment()).commit();
                     return true;
             }
             return false;
@@ -36,9 +51,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mTextMessage = (TextView) findViewById(R.id.message);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        navigation.setSelectedItemId(R.id.navigation_home);
     }
 
 }
