@@ -5,6 +5,13 @@
     <string name="title_residences">Résidences</string>
     <string name="title_profil">Profil</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="choisir_un_mode">Choisir un mode de rechargement</string>
+    <string name="carte">Carte Bancaire</string>
+    <string name="compte">Compte Bancaire</string>
+    <string name="paypal">Paypal</string>
+    <string name="prix">Prix</string>
+    <string name="prixVA">Prix pour les adhérents V.A. : 2.00€</string>
+    <string name="prixNONVA">Prix pour les non adhérents  : 5.00€</string>
 </resources>
