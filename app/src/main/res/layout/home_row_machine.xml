@@ -1,70 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent" android:layout_height="match_parent" android:padding="10dp"
-    android:id="@+id/relativeLayout">
-
-    <ImageView
-        android:id="@+id/colorBack"
-        android:layout_width="397dp"
-        android:layout_height="44dp"
-        app:layout_constraintBottom_toBottomOf="@+id/etat"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.526"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:color/holo_green_light" />
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout3"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
     <TextView
         android:id="@+id/num"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:gravity="center"
         android:text="1. "
         android:textAlignment="center"
         android:textColor="@android:color/black"
-        android:textSize="18sp"
+        android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/logo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
+        android:layout_width="40dp"
+        android:layout_height="37dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
         android:gravity="center"
-        app:layout_constraintBottom_toBottomOf="@+id/num"
-        app:layout_constraintEnd_toStartOf="@+id/etat"
-        app:layout_constraintHorizontal_bias="0.156"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/num"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_perm_identity_black_24dp" />
 
     <TextView
-        android:id="@+id/temps"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="40 min"
-        android:textColor="@android:color/background_dark"
-        android:textSize="14sp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="@+id/etat"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <TextView
         android:id="@+id/etat"
-        android:layout_width="223dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="8dp"
+        android:layout_width="197dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
         android:gravity="center"
         android:text="Disponible"
         android:textAlignment="textStart"
         android:textColor="@android:color/background_dark"
-        android:textSize="18sp"
+        android:textSize="28sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/temps"
+        app:layout_constraintStart_toEndOf="@+id/logo"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/temps"
+        android:layout_width="81dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="40 min"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@android:color/background_dark"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
 </android.support.constraint.ConstraintLayout>

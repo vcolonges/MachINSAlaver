@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.machinsa_laver.machinsalaver.R;
@@ -52,7 +53,7 @@ public class MachineAdapter extends ArrayAdapter<Machine> implements View.OnClic
         // Check if an existing view is being reused, otherwise inflate the view
         HolderListMachine viewHolder; // view lookup cache stored in tag
 
-        final View result;
+        View result = null;
 
         if (convertView == null) {
 
@@ -64,14 +65,22 @@ public class MachineAdapter extends ArrayAdapter<Machine> implements View.OnClic
             viewHolder.etat = (TextView) convertView.findViewById(R.id.etat);
             viewHolder.temps = (TextView) convertView.findViewById(R.id.temps);
             viewHolder.logoMachine = (ImageView) convertView.findViewById(R.id.logo);
-            viewHolder.backColor = (ImageView) convertView.findViewById(R.id.colorBack);
-
-            result=convertView;
 
             convertView.setTag(viewHolder);
+
+            convertView.setBackgroundColor(Color.parseColor("#CFCFCF"));
+
+            if(Machine.getEtat().equals("Disponible")){
+                convertView.setBackgroundColor(Color.parseColor("#B6E4A8"));
+            }
+            if(Machine.getEtat().equals("Occupée")){
+                convertView.setBackgroundColor(Color.parseColor("#F9D69C"));
+            }
+
+            result = convertView;
         } else {
             viewHolder = (HolderListMachine) convertView.getTag();
-            result=convertView;
+            result = convertView;
         }
 
         lastPosition = position;
@@ -79,15 +88,7 @@ public class MachineAdapter extends ArrayAdapter<Machine> implements View.OnClic
         viewHolder.num.setText(Machine.getNum());
         viewHolder.etat.setText(Machine.getEtat());
         viewHolder.temps.setText(Machine.getTemps());
-        viewHolder.logoMachine.setBackgroundResource(R.drawable.ic_business_black_24dp);
-
-        int colorFond = Color.GREEN;
-
-        if(Machine.getNum().equals("1")){
-            colorFond = Color.YELLOW;
-        }
-
-        viewHolder.backColor.setImageDrawable(new ColorDrawable(colorFond));
+        viewHolder.logoMachine.setBackgroundResource(R.drawable.washer);
         viewHolder.logoMachine.setTag(position);
 
         return convertView;

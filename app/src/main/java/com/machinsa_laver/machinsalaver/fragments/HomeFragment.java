@@ -1,5 +1,6 @@
 package com.machinsa_laver.machinsalaver.fragments;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -20,13 +21,6 @@ public class HomeFragment extends Fragment {
     private ListView mListView;
     ArrayList<Machine> dataModels;
     private static MachineAdapter adapter;
-    private String[] prenoms = new String[]{
-            "Antoine", "Benoit", "Cyril", "David", "Eloise", "Florent",
-            "Gerard", "Hugo", "Ingrid", "Jonathan", "Kevin", "Logan",
-            "Mathieu", "Noemie", "Olivia", "Philippe", "Quentin", "Romain",
-            "Sophie", "Tristan", "Ulric", "Vincent", "Willy", "Xavier",
-            "Yann", "Zoé"
-    };
 
     public HomeFragment() {
         // Required empty public constructor
@@ -51,39 +45,17 @@ public class HomeFragment extends Fragment {
         mListView = (ListView) finalView.findViewById(R.id.listeResidence);
 
         dataModels= new ArrayList<>();
-        dataModels.add(new Machine("1bbbb","deededed","dddddd"));
-        dataModels.add(new Machine("1","deededed","dddddd"));
-        dataModels.add(new Machine("2","deededed","dddddd"));
-        dataModels.add(new Machine("1","deededed","dddddd"));
-        dataModels.add(new Machine("1","deededed","dddddd"));
-        dataModels.add(new Machine("1","deededed","dddddd"));
-        dataModels.add(new Machine("1","deededed","dddddd"));
-        dataModels.add(new Machine("1","deededed","dddddd"));
-        dataModels.add(new Machine("1","deededed","dddddd"));
-        dataModels.add(new Machine("1","deededed","dddddd"));
-        dataModels.add(new Machine("1","deededed","dddddd"));
-        dataModels.add(new Machine("1","deededed","dddddd"));
-        dataModels.add(new Machine("1","deededed","dddddd"));
-        dataModels.add(new Machine("1","deededed","dddddd"));
-        dataModels.add(new Machine("1","deededed","dddddd"));
-        dataModels.add(new Machine("1","deededed","dddddd"));
-        dataModels.add(new Machine("1","deededed","dddddd"));
-        dataModels.add(new Machine("1","deededed","dddddd"));
-        dataModels.add(new Machine("1","deededed","dddddd"));
-        dataModels.add(new Machine("1","deededed","dddddd"));
-        dataModels.add(new Machine("1","deededed","dddddd"));
-        dataModels.add(new Machine("1","deededed","dddddd"));
-        dataModels.add(new Machine("1","deededed","dddddd"));
-        dataModels.add(new Machine("1","deededed","dddddd"));
+        dataModels.add(new Machine("1","Disponible",""));
+        dataModels.add(new Machine("1","Disponible",""));
+        dataModels.add(new Machine("2","Occupée","40 min"));
+        dataModels.add(new Machine("3","Occupée","40 min"));
+        dataModels.add(new Machine("4","Occupée","40 min"));
+        dataModels.add(new Machine("5","Hors service",""));
+        dataModels.add(new Machine("6","Hors service",""));
+        dataModels.add(new Machine("7","Hors service",""));
 
         adapter = new MachineAdapter(dataModels,getActivity().getApplicationContext());
 
-
-                //android.R.layout.simple_list_item_1 est une vue disponible de base dans le SDK android,
-        //Contenant une TextView avec comme identifiant "@android:id/text1"
-
-     //   final ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity().getApplicationContext(),
-     //           android.R.layout.simple_list_item_1, prenoms);
         mListView.setAdapter(adapter);
 
         // Inflate the layout for this fragment
