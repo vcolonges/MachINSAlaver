@@ -69,9 +69,11 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="20dp"
-                android:drawableStart="@drawable/ic_credit_card_black_24dp"
+                android:backgroundTint="@color/colorPrimary"
+                android:drawableStart="@drawable/ic_credit_card_white_24dp"
                 android:text="@string/carte"
-                android:textAllCaps="false" />
+                android:textAllCaps="false"
+                android:textColor="@android:color/white" />
 
             <Button
                 android:id="@+id/button_compte"
@@ -80,9 +82,11 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="20dp"
-                android:drawableStart="@drawable/ic_account_balance_black_24dp"
+                android:backgroundTint="@color/colorPrimary"
+                android:drawableStart="@drawable/ic_account_balance_white_24dp"
                 android:text="@string/compte"
-                android:textAllCaps="false" />
+                android:textAllCaps="false"
+                android:textColor="@android:color/white" />
 
             <Button
                 android:id="@+id/button_paypal"
@@ -91,9 +95,11 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="20dp"
+                android:backgroundTint="@color/colorPrimary"
                 android:drawableStart="@drawable/ic_paypal_24dp"
                 android:text="@string/paypal"
-                android:textAllCaps="false" />
+                android:textAllCaps="false"
+                android:textColor="@android:color/white" />
 
         </LinearLayout>
     </ScrollView>
