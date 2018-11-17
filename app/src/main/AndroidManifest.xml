@@ -20,10 +20,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ModesDePaiementActivity"
+        <activity
+            android:name=".ModesDePaiementActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".EditionCBActivity"
-            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".EditionCBActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".ChoisirMontantActivity" />
+        <activity android:name=".ConfirmerInformationsActivity"></activity>
     </application>
 
 </manifest>

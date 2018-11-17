@@ -107,8 +107,17 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_margin="20dp"
-        android:backgroundTint="@color/colorPrimary"
-        android:text="@string/modifier"
-        android:textColor="@android:color/white" />
+        android:text="@string/modifier" />
+
+    <Button
+
+        android:id="@+id/button_supprimer_cb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:backgroundTint="@android:color/tab_indicator_text"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:text="Supprimer" />
 
     </LinearLayout>
