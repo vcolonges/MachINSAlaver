@@ -16,7 +16,7 @@
             android:id="@+id/solde"
             android:layout_width="wrap_content"
             android:layout_height="100dp"
-            android:layout_weight="1"
+            android:layout_weight="0.9"
             android:gravity="center"
             android:text="4.00€"
             android:textSize="30sp"/>
@@ -69,11 +69,8 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="20dp"
-                android:backgroundTint="@color/colorPrimary"
                 android:drawableStart="@drawable/ic_credit_card_white_24dp"
-                android:text="@string/carte"
-                android:textAllCaps="false"
-                android:textColor="@android:color/white" />
+                android:text="@string/carte" />
 
             <Button
                 android:id="@+id/button_compte"
@@ -82,11 +79,8 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="20dp"
-                android:backgroundTint="@color/colorPrimary"
                 android:drawableStart="@drawable/ic_account_balance_white_24dp"
-                android:text="@string/compte"
-                android:textAllCaps="false"
-                android:textColor="@android:color/white" />
+                android:text="@string/compte" />
 
             <Button
                 android:id="@+id/button_paypal"
@@ -95,11 +89,8 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="20dp"
-                android:backgroundTint="@color/colorPrimary"
                 android:drawableStart="@drawable/ic_paypal_24dp"
-                android:text="@string/paypal"
-                android:textAllCaps="false"
-                android:textColor="@android:color/white" />
+                android:text="@string/paypal" />
 
         </LinearLayout>
     </ScrollView>

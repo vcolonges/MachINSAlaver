@@ -8,17 +8,17 @@
         android:orientation="vertical"
         tools:context=".ModesDePaiementActivity"
         android:layout_marginStart="@dimen/activity_horizontal_margin"
-        android:layout_marginEnd="@dimen/activity_horizontal_margin">
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+        android:layout_gravity="center">
 
-        <TextView
-            android:id="@+id/tv_modes_de_paiement"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:gravity="center"
-            android:text="@string/modes_de_paiement"
-            android:textSize="30sp"
-            android:layout_marginTop="@dimen/activity_vertical_margin"
-            android:layout_marginBottom="@dimen/activity_vertical_margin"/>
+    <TextView
+        android:id="@+id/tv_modes_de_paiement"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:gravity="center"
+        android:text="@string/modes_de_paiement"
+        android:textSize="30sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -33,23 +33,23 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/tv_titre_nom"
+                    android:id="@+id/tv_titre_numeroCB"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:textSize="@dimen/texte_profil"
-                    android:text="@string/nom" />
+                    android:text="@string/numeroCB" />
 
                 <HorizontalScrollView android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1">
+
                     <TextView
-                        android:id="@+id/tv_nom"
+                        android:id="@+id/tv_numeroCB"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:singleLine="true"
-                        android:textSize="@dimen/texte_profil"
-                        android:text="Renard" />
+                        android:textSize="@dimen/texte_profil" />
                 </HorizontalScrollView>
 
             </LinearLayout>
@@ -60,24 +60,20 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/tv_titre_prenom"
+                    android:id="@+id/tv_titre_dateExpiration"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:textSize="@dimen/texte_profil"
-                    android:text="@string/prenom" />
+                    android:text="@string/dateExpiration"
+                    android:textSize="@dimen/texte_profil" />
 
-                <HorizontalScrollView android:layout_width="0dp"
+                <TextView
+                    android:id="@+id/tv_dateExpiration"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1">
-                    <TextView
-                        android:id="@+id/tv_prenom"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:singleLine="true"
-                        android:textSize="@dimen/texte_profil"
-                        android:text="Pierre" />
-                </HorizontalScrollView>
+                    android:layout_weight="1"
+                    android:singleLine="true"
+                    android:textSize="@dimen/texte_profil" />
 
             </LinearLayout>
 
@@ -87,155 +83,32 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/tv_titre_naissance"
+                    android:id="@+id/tv_titre_CVV"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:textSize="@dimen/texte_profil"
-                    android:text="@string/naissance" />
+                    android:text="@string/cvv" />
 
                 <TextView
-                    android:id="@+id/tv_naissance"
+                    android:id="@+id/tv_cvv"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:textSize="@dimen/texte_profil"
-                    android:text="01/01/1997" />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/tv_titre_mail"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textSize="@dimen/texte_profil"
-                    android:text="@string/email" />
-
-                <HorizontalScrollView android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1">
-                    <TextView
-                        android:id="@+id/tv_mail"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:singleLine="true"
-                        android:textSize="@dimen/texte_profil"
-                        android:text="pierre.renard@insa-lyon.fr" />
-                </HorizontalScrollView>
-
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/tv_titre_tel"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textSize="@dimen/texte_profil"
-                    android:text="@string/telephone" />
-
-                <TextView
-                    android:id="@+id/tv_tel"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textSize="@dimen/texte_profil"
-                    android:text="06.43.57.09.09" />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/tv_titre_carte_VA"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textSize="@dimen/texte_profil"
-                    android:text="@string/carteVA" />
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal"
-                    android:layout_weight="1">
-
-                    <EditText
-                        android:id="@+id/et_carte_VA"
-                        android:background="@android:color/transparent"
-                        android:textSize="@dimen/texte_profil"
-                        android:text="123456789012"
-                        android:textColor="@android:color/tab_indicator_text"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:maxLength="12"
-                        android:ems="10"
-                        android:inputType="number"
-                        android:focusable="false"
-                        android:focusableInTouchMode="false"/>
-
-                    <ImageButton
-                        android:id="@+id/button_edit_carte_VA"
-                        android:background="@android:color/transparent"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/ic_mode_edit_black_24dp" />
-
-                    <ImageButton
-                        android:id="@+id/button_register_carte_VA"
-                        android:background="@android:color/transparent"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:visibility="gone"
-                        android:src="@drawable/ic_done_black_24dp" />
-
-
-                </LinearLayout>
-
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/tv_titre_modes"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textSize="@dimen/texte_profil"
-                    android:text="@string/modes_de_paiement" />
-
-                <ImageButton
-                    android:id="@+id/button_edit_modes"
-                    android:background="@android:color/transparent"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_keyboard_arrow_right_black_24dp" />
-
+                    android:textSize="@dimen/texte_profil" />
             </LinearLayout>
 
         </LinearLayout>
 
-        <Button
+    <Button
 
-            android:id="@+id/button_deconnexion"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/deconnexion"
-            android:backgroundTint="@color/colorPrimary"
-            android:textColor="@android:color/white"
-            android:layout_marginTop="20dp"
-            android:layout_gravity="center_horizontal"
-            android:padding="15dp"/>
+        android:id="@+id/button_modifier_cb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="20dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:text="@string/modifier"
+        android:textColor="@android:color/white" />
 
     </LinearLayout>

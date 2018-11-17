@@ -17,7 +17,7 @@
     <string name="prixNONVA">Prix pour les non adhérents  : 5.00€</string>
 
     <!-- Strings pour le fragment Profil -->
-    <string name="mon_compte"><u>Mon Compte</u></string>
+    <string name="mon_compte">Mon Compte</string>
     <string name="nom">Nom :</string>
     <string name="prenom">Prénom :</string>
     <string name="naissance">Date de naissance :</string>
@@ -27,5 +27,11 @@
     <string name="modes_de_paiement">Modes de paiement</string>
     <string name="deconnexion">Déconnexion</string>
 
+    <!-- Strings pour le Activity Modes de paiement -->
+    <string name="numeroCB">N° CB :</string>
+    <string name="dateExpiration">Date d\'expiration :</string>
+    <string name="cvv">CVV :</string>
+    <string name="modifier">Modifier</string>
+    <string name="valider">Valider</string>
 
 </resources>

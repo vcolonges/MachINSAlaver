@@ -79,7 +79,7 @@ public class ProfilFragment extends Fragment {
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), ModesDePaiementActivity.class);
                 startActivity(intent);
-
+                getActivity().overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
             }
         });
 
