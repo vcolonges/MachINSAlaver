@@ -21,6 +21,7 @@
         android:textSize="30sp" />
 
         <LinearLayout
+            android:id="@+id/ll_cb"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -100,6 +101,27 @@
 
         </LinearLayout>
 
+    <TextView
+        android:id="@+id/tv_ajout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:text="Aucun mode de paiement n'est renseigné"
+        android:textAlignment="center"
+        android:textSize="@dimen/texte_profil"
+        android:visibility="gone"/>
+
+    <Button
+
+        android:id="@+id/button_ajouter_cb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="20dp"
+        android:text="Ajouter"
+        android:visibility="gone"/>
+
     <Button
 
         android:id="@+id/button_modifier_cb"
@@ -120,4 +142,4 @@
         android:layout_marginEnd="20dp"
         android:text="Supprimer" />
 
-    </LinearLayout>
+</LinearLayout>

@@ -20,11 +20,10 @@
         android:textSize="18sp" />
 
     <TextView
-        android:id="@+id/solde"
+        android:id="@+id/tv_solde"
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:gravity="center"
-        android:text="4.00€"
         android:textSize="30sp" />
 
     <ImageButton

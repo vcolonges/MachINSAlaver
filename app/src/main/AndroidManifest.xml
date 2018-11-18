@@ -26,8 +26,10 @@
         <activity
             android:name=".EditionCBActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".ChoisirMontantActivity" />
-        <activity android:name=".ConfirmerInformationsActivity"></activity>
+        <activity android:name=".ChoisirMontantActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ConfirmerInformationsActivity"
+            android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>

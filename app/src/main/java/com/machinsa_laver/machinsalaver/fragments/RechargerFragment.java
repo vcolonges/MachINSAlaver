@@ -12,8 +12,10 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.machinsa_laver.machinsalaver.Application;
 import com.machinsa_laver.machinsalaver.ChoisirMontantActivity;
 import com.machinsa_laver.machinsalaver.EditionCBActivity;
 import com.machinsa_laver.machinsalaver.R;
@@ -22,6 +24,8 @@ public class RechargerFragment extends Fragment {
 
     private ImageButton button_info;
     private Button button_recharger_cb;
+
+    private TextView tv_solde;
 
     public RechargerFragment() {}
 
@@ -39,9 +43,17 @@ public class RechargerFragment extends Fragment {
         button_info = view.findViewById(R.id.button_info);
         button_recharger_cb = view.findViewById(R.id.button_recharger_cb);
 
+        tv_solde = view.findViewById(R.id.tv_solde);
+
         initializeListeners();
 
         return view;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        tv_solde.setText(Application.SOLDE+"€");
     }
 
     private void initializeListeners(){

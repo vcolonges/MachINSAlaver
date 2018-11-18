@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.InputFilter;
 import android.text.Spanned;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
@@ -22,26 +23,34 @@ public class ChoisirMontantActivity extends AppCompatActivity {
 
     private TextView tv_numero_cb;
     private TextView tv_date_expiration;
+    private TextView tv_solde;
 
     private EditText et_montant;
+
+    static ChoisirMontantActivity activity;
+    public static ChoisirMontantActivity getInstance(){
+        return activity;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choisir_montant);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
         button_valider_rechargement = findViewById(R.id.button_valider_rechargement);
         button_editer_cb = findViewById(R.id.button_editer_cb);
 
         tv_numero_cb = findViewById(R.id.tv_numeroCB);
         tv_date_expiration = findViewById(R.id.tv_dateExpiration);
+        tv_solde = findViewById(R.id.tv_solde);
+        tv_solde.setText(Application.SOLDE+"€");
 
         et_montant = findViewById(R.id.et_montant);
         et_montant.setFilters(new InputFilter[] {new DecimalDigitsInputFilter(3,2)});
 
         initializeListeners();
 
+        activity = this;
     }
 
     @Override
@@ -72,7 +81,7 @@ public class ChoisirMontantActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(ChoisirMontantActivity.this, EditionCBActivity.class);
                 intent.putExtra("edition",false);
-                startActivity(intent);
+                startActivityForResult(intent, 12);
             }
         });
 
@@ -96,12 +105,20 @@ public class ChoisirMontantActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        Log.e("Vincent","optionchoix");
         switch (item.getItemId()) {
             case android.R.id.home:
                 this.onBackPressed();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if(resultCode==12){
+            finish();
         }
     }
 

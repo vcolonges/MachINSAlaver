@@ -8,6 +8,44 @@
     android:layout_marginEnd="@dimen/activity_horizontal_margin"
     tools:context=".ConfirmerInformationsActivity">
 
+    <LinearLayout
+        android:id="@+id/ll_validation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|center_horizontal"
+        android:layout_marginTop="20dp"
+        android:background="#B6E4A8"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/ic_check_circle_black_24dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Votre rechargement a bien été pris en compte"
+            android:textAlignment="center"
+            android:textSize="24sp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|center_horizontal"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:gravity="center"
+        android:text="Confirmer les informations"
+        android:textAlignment="center"
+        android:textSize="30sp" />
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -18,23 +56,6 @@
             android:layout_gravity="center"
             android:orientation="vertical">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/activity_vertical_margin"
-                android:gravity="center"
-                android:text="Confirmer les informations"
-                android:textAlignment="center"
-                android:textSize="20sp" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/activity_vertical_margin"
-                android:gravity="center"
-                android:text="Confirmer les informations"
-                android:textAlignment="center"
-                android:textSize="30sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -93,7 +114,7 @@
                         android:textSize="24sp" />
 
                     <TextView
-                        android:id="@+id/textView9"
+                        android:id="@+id/tv_montant"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -118,39 +139,38 @@
                         android:textSize="24sp" />
 
                     <TextView
-                        android:id="@+id/textView11"
+                        android:id="@+id/tv_nouveau_solde"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="4.00€"
                         android:textAlignment="textEnd"
                         android:textSize="28sp" />
                 </LinearLayout>
 
             </LinearLayout>
 
-            <Button
-
-                android:id="@+id/button_confirmer"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_margin="20dp"
-                android:text="Confirmer"
-                android:textAllCaps="false" />
-
-            <Button
-
-                android:id="@+id/button_accueil"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_margin="20dp"
-                android:text="Retour à l'accueil"
-                android:textAllCaps="false"
-                android:visibility="gone" />
-
         </LinearLayout>
 
     </ScrollView>
+
+    <Button
+
+        android:id="@+id/button_accueil"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_margin="20dp"
+        android:text="Retour à l'accueil"
+        android:textAllCaps="false"
+        android:visibility="gone" />
+
+    <Button
+
+        android:id="@+id/button_confirmer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_margin="20dp"
+        android:text="Confirmer"
+        android:textAllCaps="false" />
 </FrameLayout>
