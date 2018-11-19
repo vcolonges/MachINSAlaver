@@ -1,11 +1,10 @@
 package com.machinsa_laver.machinsalaver;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.text.InputFilter;
 import android.text.Spanned;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -153,7 +152,6 @@ public class ChoisirMontantActivity extends AppCompatActivity {
 
         @Override
         public CharSequence filter(CharSequence source, int start, int end, Spanned dest, int dstart, int dend) {
-            Toast.makeText(ChoisirMontantActivity.this,dest.toString()+source,Toast.LENGTH_LONG).show();
             Matcher matcher=mPattern.matcher(dest.toString()+source);
             if(!matcher.matches())
                 return "";

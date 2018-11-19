@@ -13,11 +13,9 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.machinsa_laver.machinsalaver.Application;
 import com.machinsa_laver.machinsalaver.ChoisirMontantActivity;
-import com.machinsa_laver.machinsalaver.EditionCBActivity;
 import com.machinsa_laver.machinsalaver.R;
 
 public class RechargerFragment extends Fragment {

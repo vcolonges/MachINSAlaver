@@ -1,8 +1,8 @@
 package com.machinsa_laver.machinsalaver;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -16,6 +16,7 @@ public class ModesDePaiementActivity extends AppCompatActivity {
     private Button button_modifier_cb;
     private Button button_supprimer_cb;
 
+    private TextView tv_titre_cb;
     private TextView tv_numero_cb;
     private TextView tv_date_expiration;
     private TextView tv_cvv;
@@ -33,6 +34,7 @@ public class ModesDePaiementActivity extends AppCompatActivity {
         button_modifier_cb = findViewById(R.id.button_modifier_cb);
         button_supprimer_cb = findViewById(R.id.button_supprimer_cb);
 
+        tv_titre_cb = findViewById(R.id.tv_titre_cb);
         tv_numero_cb = findViewById(R.id.tv_numeroCB);
         tv_date_expiration = findViewById(R.id.tv_dateExpiration);
         tv_cvv = findViewById(R.id.tv_cvv);
@@ -53,12 +55,14 @@ public class ModesDePaiementActivity extends AppCompatActivity {
     private void initializeValues(){
 
         if(Application.NUMERO_CB.equals("")){
+            tv_titre_cb.setVisibility(View.GONE);
             tv_ajout.setVisibility(View.VISIBLE);
             button_ajouter_cb.setVisibility(View.VISIBLE);
             ll_cb.setVisibility(View.GONE);
             button_modifier_cb.setVisibility(View.GONE);
             button_supprimer_cb.setVisibility(View.GONE);
         }else{
+            tv_titre_cb.setVisibility(View.VISIBLE);
             tv_ajout.setVisibility(View.GONE);
             button_ajouter_cb.setVisibility(View.GONE);
             ll_cb.setVisibility(View.VISIBLE);

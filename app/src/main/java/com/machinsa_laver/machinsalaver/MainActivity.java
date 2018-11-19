@@ -8,7 +8,6 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.machinsa_laver.machinsalaver.fragments.HomeFragment;
 import com.machinsa_laver.machinsalaver.fragments.ProfilFragment;
