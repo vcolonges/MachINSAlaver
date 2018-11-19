@@ -8,8 +8,10 @@ import android.text.Spanned;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,17 +22,16 @@ public class ChoisirMontantActivity extends AppCompatActivity {
 
     private ImageButton button_valider_rechargement;
     private ImageButton button_editer_cb;
+    private Button button_ajouter_cb;
 
     private TextView tv_numero_cb;
     private TextView tv_date_expiration;
     private TextView tv_solde;
 
+    private LinearLayout ll_infos;
+
     private EditText et_montant;
 
-    static ChoisirMontantActivity activity;
-    public static ChoisirMontantActivity getInstance(){
-        return activity;
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,18 +40,19 @@ public class ChoisirMontantActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         button_valider_rechargement = findViewById(R.id.button_valider_rechargement);
         button_editer_cb = findViewById(R.id.button_editer_cb);
+        button_ajouter_cb = findViewById(R.id.button_ajouter_cb);
 
         tv_numero_cb = findViewById(R.id.tv_numeroCB);
         tv_date_expiration = findViewById(R.id.tv_dateExpiration);
         tv_solde = findViewById(R.id.tv_solde);
         tv_solde.setText(Application.SOLDE+"€");
 
+        ll_infos = findViewById(R.id.ll_infos);
+
         et_montant = findViewById(R.id.et_montant);
-        et_montant.setFilters(new InputFilter[] {new DecimalDigitsInputFilter(3,2)});
+        et_montant.setFilters(new InputFilter[] {new DecimalDigitsInputFilter()});
 
         initializeListeners();
-
-        activity = this;
     }
 
     @Override
@@ -60,6 +62,7 @@ public class ChoisirMontantActivity extends AppCompatActivity {
     }
 
     private void initializeValues(){
+
         if(Application.TMP_NUMERO_CB.equals("")){
             tv_numero_cb.setText("Non renseigné");
         }else{
@@ -72,6 +75,16 @@ public class ChoisirMontantActivity extends AppCompatActivity {
             tv_date_expiration.setText(Application.TMP_DATE_EXPIRATION);
         }
 
+        if(Application.TMP_NUMERO_CB.equals("")){
+            button_editer_cb.setVisibility(View.GONE);
+            ll_infos.setVisibility(View.GONE);
+            button_ajouter_cb.setVisibility(View.VISIBLE);
+        }else{
+            button_editer_cb.setVisibility(View.VISIBLE);
+            ll_infos.setVisibility(View.VISIBLE);
+            button_ajouter_cb.setVisibility(View.GONE);
+        }
+
     }
 
     private void initializeListeners(){
@@ -81,7 +94,16 @@ public class ChoisirMontantActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(ChoisirMontantActivity.this, EditionCBActivity.class);
                 intent.putExtra("edition",false);
-                startActivityForResult(intent, 12);
+                startActivity(intent);
+            }
+        });
+
+        button_ajouter_cb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ChoisirMontantActivity.this, EditionCBActivity.class);
+                intent.putExtra("edition",false);
+                startActivity(intent);
             }
         });
 
@@ -98,14 +120,13 @@ public class ChoisirMontantActivity extends AppCompatActivity {
                 }
                 Intent intent = new Intent(ChoisirMontantActivity.this, ConfirmerInformationsActivity.class);
                 intent.putExtra("montant",et_montant.getText().toString());
-                startActivity(intent);
+                startActivityForResult(intent,12);
             }
         });
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        Log.e("Vincent","optionchoix");
         switch (item.getItemId()) {
             case android.R.id.home:
                 this.onBackPressed();
@@ -126,14 +147,14 @@ public class ChoisirMontantActivity extends AppCompatActivity {
 
         Pattern mPattern;
 
-        public DecimalDigitsInputFilter(int digitsBeforeZero,int digitsAfterZero) {
-            mPattern=Pattern.compile("[0-9]{0," + (digitsBeforeZero-1) + "}+((\\.[0-9]{0," + (digitsAfterZero-1) + "})?)||(\\.)?");
+        public DecimalDigitsInputFilter() {
+            mPattern=Pattern.compile("^[0-9]+[.]?[0-9]{0,2}$");
         }
 
         @Override
         public CharSequence filter(CharSequence source, int start, int end, Spanned dest, int dstart, int dend) {
-
-            Matcher matcher=mPattern.matcher(dest);
+            Toast.makeText(ChoisirMontantActivity.this,dest.toString()+source,Toast.LENGTH_LONG).show();
+            Matcher matcher=mPattern.matcher(dest.toString()+source);
             if(!matcher.matches())
                 return "";
             return null;

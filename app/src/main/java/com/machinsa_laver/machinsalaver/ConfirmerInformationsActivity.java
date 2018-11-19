@@ -12,6 +12,8 @@ import android.widget.TextView;
 
 public class ConfirmerInformationsActivity extends AppCompatActivity {
 
+    private boolean valide = false;
+
     private String montant;
 
     private Button button_confirmer;
@@ -78,13 +80,15 @@ public class ConfirmerInformationsActivity extends AppCompatActivity {
                 button_accueil.setVisibility(View.VISIBLE);
                 tv_title.setVisibility(View.GONE);
                 button_confirmer.setVisibility(View.GONE);
+                getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+                valide = true;
             }
         });
 
         button_accueil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ChoisirMontantActivity.getInstance().finish();
+                setResult(12);
                 finish();
             }
         });
@@ -98,6 +102,13 @@ public class ConfirmerInformationsActivity extends AppCompatActivity {
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
+        }
+    }
+
+    @Override
+    public void onBackPressed() {
+        if(!valide){
+            super.onBackPressed();
         }
     }
 }

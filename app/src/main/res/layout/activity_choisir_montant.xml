@@ -3,11 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:layout_marginStart="@dimen/activity_horizontal_margin"
     android:layout_marginTop="8dp"
     android:layout_marginEnd="@dimen/activity_horizontal_margin"
     android:orientation="vertical"
+    android:layout_gravity="center"
     tools:context=".fragments.RechargerFragment">
 
 
@@ -26,6 +27,13 @@
         android:gravity="center"
         android:textSize="30sp" />
 
+    <Button
+        android:id="@+id/button_ajouter_cb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ajouter une carte bancaire"
+        android:visibility="gone" />
+
     <ImageButton
         android:id="@+id/button_editer_cb"
         android:layout_width="35dp"
@@ -35,6 +43,7 @@
         app:srcCompat="@drawable/ic_mode_edit_black_24dp" />
 
     <LinearLayout
+        android:id="@+id/ll_infos"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:divider="@drawable/divider_profil"

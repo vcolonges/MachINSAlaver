@@ -20,7 +20,15 @@
         android:text="@string/modes_de_paiement"
         android:textSize="30sp" />
 
-        <LinearLayout
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Carte Bancaire"
+        android:textAlignment="center"
+        android:textSize="24sp" />
+
+    <LinearLayout
             android:id="@+id/ll_cb"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -28,7 +36,7 @@
             android:divider="@drawable/divider_profil"
             android:showDividers="middle">
 
-            <LinearLayout
+        <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
