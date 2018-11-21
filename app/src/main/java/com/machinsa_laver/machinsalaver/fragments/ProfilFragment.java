@@ -10,12 +10,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.machinsa_laver.machinsalaver.Application;
+import com.machinsa_laver.machinsalaver.Identification;
 import com.machinsa_laver.machinsalaver.ModesDePaiementActivity;
 import com.machinsa_laver.machinsalaver.R;
 
@@ -25,6 +27,7 @@ public class ProfilFragment extends Fragment {
     private ImageButton button_edit_carte_VA;
     private ImageButton button_register_carte_VA;
     private ImageButton button_edit_modes;
+    private Button deco;
     private EditText et_carte_VA;
 
     private TextView tv_nom;
@@ -54,6 +57,8 @@ public class ProfilFragment extends Fragment {
         button_register_carte_VA = view.findViewById(R.id.button_register_carte_VA);
         et_carte_VA = view.findViewById(R.id.et_carte_VA);
         button_edit_modes = view.findViewById(R.id.button_edit_modes);
+
+        deco = view.findViewById(R.id.button_deconnexion);
 
         tv_nom = view.findViewById(R.id.tv_nom);
         tv_nom.setText(Application.NOM);
@@ -118,6 +123,15 @@ public class ProfilFragment extends Fragment {
                     return true;
                 }
                 return false;
+            }
+        });
+
+        deco.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), Identification.class);
+                startActivity(intent);
+                getActivity().overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
             }
         });
 

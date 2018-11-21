@@ -7,32 +7,106 @@
     android:layout_height="match_parent"
     tools:context=".fragments.HomeFragment">
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="372dp"
-        android:layout_height="55dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:orientation="horizontal"
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/timer"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <ProgressBar
+            android:id="@+id/circular_progress_bar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:indeterminate="false"
+            android:max="48"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="10dp"
+            android:progress="1"
+            android:progressDrawable="@drawable/circular_progressbar"
+            android:rotation="270"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <TextView
-            android:id="@+id/textView2"
-            android:layout_width="69dp"
-            android:layout_height="30dp"
-            android:layout_weight="1"
-            android:text="4.00 €"
-            android:textAlignment="center"
-            android:textColor="@android:color/background_dark"
+            android:id="@+id/textView16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="Machine 5"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/circular_progress_bar"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView19"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="65dp"
+            android:layout_marginTop="8dp"
+            android:text="54"
+            android:textColor="@android:color/black"
             android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/circular_progress_bar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </android.support.constraint.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:text="Votre solde :"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/timer" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="372dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6">
+
+        <TextView
+            android:id="@+id/solde"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:text="4"
+            android:textAlignment="textEnd"
+            android:textSize="30sp"
             tools:layout_editor_absoluteX="33dp"
             tools:layout_editor_absoluteY="28dp" />
 
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="5dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text=".00 €"
+            android:textSize="30sp" />
+
         <Button
-            android:id="@+id/button"
+            android:id="@+id/payer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -42,7 +116,7 @@
     <View
         android:id="@+id/view"
         android:layout_width="match_parent"
-        android:layout_height="1dp"
+        android:layout_height="2dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="10dp"
@@ -65,13 +139,13 @@
         app:layout_constraintTop_toBottomOf="@+id/view">
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/residence"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Résidence H"
             android:textAlignment="center"
-            android:textColor="@android:color/background_dark" />
+            android:textSize="28sp" />
     </LinearLayout>
 
     <LinearLayout

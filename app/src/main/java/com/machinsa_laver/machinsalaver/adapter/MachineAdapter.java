@@ -50,7 +50,7 @@ public class MachineAdapter extends ArrayAdapter<Machine> implements View.OnClic
         Machine Machine = getItem(position);
         // Check if an existing view is being reused, otherwise inflate the view
         HolderListMachine viewHolder; // view lookup cache stored in tag
-
+        convertView = null;
         View result = null;
 
         if (convertView == null) {
@@ -89,6 +89,6 @@ public class MachineAdapter extends ArrayAdapter<Machine> implements View.OnClic
         viewHolder.logoMachine.setBackgroundResource(R.drawable.washer);
         viewHolder.logoMachine.setTag(position);
 
-        return convertView;
+        return result;
     }
 }

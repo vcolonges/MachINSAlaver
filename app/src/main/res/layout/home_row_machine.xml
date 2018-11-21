@@ -58,6 +58,7 @@
         android:layout_width="81dp"
         android:layout_height="0dp"
         android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginTop="8dp"
         android:gravity="center"
         android:text="40 min"

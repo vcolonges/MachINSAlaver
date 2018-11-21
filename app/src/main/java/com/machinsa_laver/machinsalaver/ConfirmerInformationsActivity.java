@@ -69,8 +69,8 @@ public class ConfirmerInformationsActivity extends AppCompatActivity {
         button_confirmer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                double dmontant = Float.parseFloat(montant);
-                double dsolde = Float.parseFloat(Application.SOLDE)+dmontant;
+                int dmontant = Integer.parseInt(montant);
+                int dsolde = Integer.parseInt(Application.SOLDE)+dmontant;
                 tv_nouveau_solde.setText(dsolde+"€");
                 Application.SOLDE = String.valueOf(dsolde);
                 ll_validation.setVisibility(View.VISIBLE);
